@@ -1,10 +1,10 @@
 class PicturesController < ApplicationController
 
   def index
-    if params[:term].nil?
+    if params[:q].nil?
       @pictures = Picture.all
     else
-      @pictures = Picture.all #where("title = #{params[:term]}")
+      @pictures = Picture.where('title LIKE ?', "%#{params[:q]}%") #Am I safe? Drop table? 
     end
   end
 

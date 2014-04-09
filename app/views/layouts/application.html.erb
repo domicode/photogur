@@ -15,14 +15,13 @@
     <div class="navigation">
       <ul>
         <li><%= link_to("All pictures", "/pictures") %></li>
-        <li>    <form action="/search" id="new_contact" method="get">
-          <input type="text" name="term" id="term" placeholder="search term"></input>
-            <!-- <label for="login_password">Password</label> -->
-            <fieldset>
-              <input type="submit" name="login_submit" id="login_submit" value="Search contact">
-             <!-- <label><input type="checkbox" name="login_remember" id="login_remember"> Stay signed in</label> -->
-            </fieldset>
-          </form>
+        <li>
+          <div class="search">    
+          <%= form_tag("/search", method: "get", class:"css-class") do %>
+          <%= text_field_tag(:q, :placeholder => "search for") %>
+          <%= submit_tag("Search") %>
+          </div>
+        <% end %>
         </li>
         <li><%= link_to("Add a picture", "/pictures/new") %></li>
       </ul>
