@@ -1,5 +1,6 @@
 Photogur::Application.routes.draw do
   resources :pictures
+  get "search" => "pictures#index"
 
 
   # get "pictures" => "pictures#index"

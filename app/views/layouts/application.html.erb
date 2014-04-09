@@ -6,9 +6,27 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+  <body>
+    <div class="main-content">
+      <h1><%= yield :title %></h1>
+      <p><%= yield :info %></p>
+      <%= yield %>
+    </div>
+    <div class="navigation">
+      <ul>
+        <li><%= link_to("All pictures", "/pictures") %></li>
+        <li>    <form action="/search" id="new_contact" method="get">
+          <input type="text" name="term" id="term" placeholder="search term"></input>
+            <!-- <label for="login_password">Password</label> -->
+            <fieldset>
+              <input type="submit" name="login_submit" id="login_submit" value="Search contact">
+             <!-- <label><input type="checkbox" name="login_remember" id="login_remember"> Stay signed in</label> -->
+            </fieldset>
+          </form>
+        </li>
+        <li><%= link_to("Add a picture", "/pictures/new") %></li>
+      </ul>
+    </div>
 
-<%= yield %>
-
-</body>
+  </body>
 </html>

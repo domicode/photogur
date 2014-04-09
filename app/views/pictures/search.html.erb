@@ -9,8 +9,8 @@ Click on the pictures to enlarge
 <div class="picture-overview">
   <% @pictures.each do |picture| %>
     <div class="picture-small">
-      <div class="title"><%= link_to truncate(picture[:title], length: 20), "/pictures/#{picture.id}" %></div> 
-      <div class="artist"><%= picture[:artist] %></div>
+      <p><div class="title"><%= link_to truncate(picture[:title], length: 20), "/pictures/#{picture.id}" %></div> 
+      <div class="artist"><%= picture[:artist] %></div></p>
       <div class="picture"><%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %></div>
     </div>
   <% end %>

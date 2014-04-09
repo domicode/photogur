@@ -1,3 +1,100 @@
 // Place all the styles related to the pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+
+html {
+  font-family:  Arial, sans-serif;
+}
+
+body {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+// CSS for nvaigation
+
+.navigation {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  background-color: rgba(0,0,0, 1);
+  color: rgba(255,255,255, 0.7);
+  bottom: 0px;
+  left: 0px;
+  position: fixed;
+}
+
+.navigation a {
+  color: rgba(255,255,255, 0.7);
+}
+
+.navigation a:hover {
+  color: white;
+}
+
+.navigation ul {
+  list-style: none;
+  margin-top: 3px;
+  margin-left: -20px;
+}
+
+.navigation li {
+  float: left;
+  padding: 5px 0px;
+  width: 200px;
+  border-top: 1px solid rgba(255,255,255, 0.7);
+  border-left: 1px solid rgba(255,255,255, 0.7);  
+  text-align: center;
+  border-radius: 3px;
+}
+
+
+// Here is the CSS for the pictures on the main page
+
+.picture-overview {
+  width: 100%;
+  height: 100%;
+}
+
+.picture-small {
+  float: left;
+  width: 200px;
+  height: auto;
+}
+
+.picture-small img {
+  width: 180px;
+  opacity: 1;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 0.6rem;
+  color: rgba(0,0,0, 0.7)
+}
+
+// This is the view for the detailed pictures
+
+.detail-view {
+  height: 100%;
+}
+
+.detail-view img {
+  height: 70%;
+  width: auto;
+}

@@ -1,7 +1,11 @@
 class PicturesController < ApplicationController
 
   def index
-    @pictures = Picture.all
+    if params[:term].nil?
+      @pictures = Picture.all
+    else
+      @pictures = Picture.all #where("title = #{params[:term]}")
+    end
   end
 
 
@@ -41,7 +45,6 @@ class PicturesController < ApplicationController
     @picture.destroy
     redirect_to pictures_url
   end
-
 
 
   private
