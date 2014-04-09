@@ -1,17 +1,17 @@
 <% content_for :title do %>
-Welcome to my photo page
+  Welcome to my photo page
 <% end %>
 
 <% content_for :info do %>
-Click on the pictures to enlarge
+  Click on the pictures to enlarge
 <% end %>
 
 <div class="picture-overview">
   <% @pictures.each do |picture| %>
     <div class="picture-small">
-      <div class="title"><%= link_to truncate(picture[:title], length: 20), "/pictures/#{picture.id}" %></div> 
+      <div class="title"><%= link_to truncate(picture[:title], length: 20), picture_path(picture) %></div> 
       <div class="artist"><%= picture[:artist] %></div>
-      <div class="picture"><%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %></div>
+      <div class="picture"><%= link_to image_tag(picture.url), picture_path(picture) %></div>
     </div>
   <% end %>
 </div>

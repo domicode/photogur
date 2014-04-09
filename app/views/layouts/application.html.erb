@@ -18,8 +18,8 @@
         <li>
           <div class="search">    
           <%= form_tag("/search", method: "get", class:"css-class") do %>
-          <%= text_field_tag(:q, :placeholder => "search for") %>
-          <%= submit_tag("Search") %>
+          <%= text_field_tag(:q, nil, placeholder: "search for", class: "searchfield") %>
+          <%= submit_tag("GO", :class => "searchbutton") %>
           </div>
         <% end %>
         </li>

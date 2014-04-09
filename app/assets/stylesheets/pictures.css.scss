@@ -26,7 +26,6 @@ a {
 
 .navigation {
   width: 100%;
-  height: auto;
   padding: 0px;
   background-color: rgba(0,0,0, 1);
   color: rgba(255,255,255, 0.7);
@@ -57,6 +56,35 @@ a {
   border-left: 1px solid rgba(255,255,255, 0.7);  
   text-align: center;
   border-radius: 3px;
+}
+
+.search {
+  color: black;
+}
+
+.searchfield {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 160px;
+  height: 23px;
+  margin-left: -10px;
+  background-color: black;
+  outline: none;
+  border: 0px;
+  color: white;
+}
+
+.searchbutton {
+  -webkit-appearance: none;
+  border: 0px;
+  width: 27px; 
+  height: 23px;
+  color: rgba(255,255,255, 0.7);
+  font-size: 0.5rem;
+  background-color: black; 
+  float: right;
+  margin-left: -15px;
+  margin-right: 8px;
 }
 
 

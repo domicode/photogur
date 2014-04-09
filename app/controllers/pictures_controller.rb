@@ -1,10 +1,10 @@
 class PicturesController < ApplicationController
 
   def index
-    if params[:q].nil?
-      @pictures = Picture.all
+    if params[:q]
+      @pictures = Picture.where("title LIKE ? OR artist LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%") 
     else
-      @pictures = Picture.where('title LIKE ?', "%#{params[:q]}%") #Am I safe? Drop table? 
+      @pictures = Picture.all
     end
   end
 
@@ -34,7 +34,8 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
 
     if @picture.update_attributes(picture_params)
-      redirect_to "/pictures/#{@picture.id}"
+      redirect_to picture_path(@picture)
+      #also possible: redirect_to @picture
     else
       render :edit
     end
